@@ -35,7 +35,7 @@ export default function Hero() {
 
         {/* CTA */}
         <a
-          href="#assessment"
+          href="/quiz"
           className="inline-block bg-accent text-page font-extrabold text-sm rounded-[7px] px-8 py-[15px] mb-9 transition-opacity hover:opacity-90"
         >
           Jetzt AI-Readiness testen →
