@@ -7,7 +7,7 @@ export default function Footer() {
         <div>
           <p className="text-white font-bold text-[15px] mb-2">AI Advisory</p>
           <p className="text-muted text-sm max-w-xs leading-relaxed">
-            AI ist kein Nice-to-have. Es ist dein größter Hebel.
+            AI ist kein Nice-to-have. Es ist dein grösster Hebel.
           </p>
         </div>
         <div className="flex gap-6">
