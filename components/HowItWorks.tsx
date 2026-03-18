@@ -46,16 +46,19 @@ export default function HowItWorks() {
         {steps.map((step) => {
           const Icon = step.icon
           return (
-            <div key={step.number} className="flex flex-col gap-5">
+            <div
+              key={step.number}
+              className="flex flex-col gap-5 group cursor-default"
+            >
               <div className="flex items-center gap-3">
-                <span className="text-muted text-[10px] uppercase tracking-[2px] font-medium">
+                <span className="text-muted text-[10px] uppercase tracking-[2px] font-medium group-hover:text-accent transition-colors duration-200">
                   {step.number}
                 </span>
-                <div className="h-px flex-1 bg-divider" />
+                <div className="h-px flex-1 bg-divider group-hover:bg-accent/30 transition-colors duration-200" />
               </div>
-              <Icon size={28} className="text-accent" strokeWidth={1.5} />
+              <Icon size={28} className="text-accent transition-transform duration-200 group-hover:scale-110" strokeWidth={1.5} />
               <div>
-                <h3 className="text-white text-[17px] font-bold mb-2 leading-snug">
+                <h3 className="text-white text-[17px] font-bold mb-2 leading-snug group-hover:text-accent transition-colors duration-200">
                   {step.title}
                 </h3>
                 <p className="text-body text-sm leading-relaxed">

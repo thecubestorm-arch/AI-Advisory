@@ -39,7 +39,7 @@ export default function Benefits() {
           return (
             <div
               key={b.title}
-              className="bg-card border border-divider rounded-[10px] p-8 flex flex-col gap-5"
+              className="bg-card border border-divider rounded-[10px] p-8 flex flex-col gap-5 transition-all duration-200 hover:border-accent/40 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/30 cursor-default"
             >
               <Icon size={32} className="text-accent" strokeWidth={1.5} />
               <div>

@@ -413,7 +413,13 @@ export default function Quiz() {
       {/* ── Top bar ── */}
       <header className="sticky top-0 z-10 bg-page border-b border-divider px-6 lg:px-12">
         <div className="flex items-center justify-between h-14">
-          <Link href="/" className="text-white font-bold text-[15px] tracking-tight">AI Advisory</Link>
+          <div className="flex items-center gap-4">
+            <Link href="/" className="text-white font-bold text-[15px] tracking-tight hover:text-accent transition-colors duration-150">AI Advisory</Link>
+            <div className="w-px h-4 bg-divider" />
+            <Link href="/" className="text-muted text-xs hover:text-white transition-colors duration-150 flex items-center gap-1">
+              ← Startseite
+            </Link>
+          </div>
 
           {uiStep < 5 ? (
             <div className="flex items-center gap-2">
