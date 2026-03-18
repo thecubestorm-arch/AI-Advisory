@@ -94,6 +94,7 @@ function QuizCard({
     <button
       type="button"
       onClick={onClick}
+      aria-pressed={selected}
       className={`w-full text-left rounded-lg border px-4 py-4 transition-colors duration-150 ${
         selected
           ? 'border-accent text-accent'
@@ -127,6 +128,7 @@ function QuizCheckbox({
     <button
       type="button"
       onClick={onClick}
+      aria-pressed={selected}
       className={`w-full text-left rounded-lg border px-4 py-4 transition-colors duration-150 ${
         selected
           ? 'border-accent text-accent'
@@ -235,7 +237,7 @@ export default function Quiz() {
               } ${s === step ? 'w-8' : 'w-4'}`}
             />
           ))}
-          <span className="text-muted text-xs ml-2">Schritt {step} von 4</span>
+          <span className="text-muted text-xs ml-2">Schritt {step} von 3</span>
         </div>
       )}
 
@@ -246,8 +248,9 @@ export default function Quiz() {
           <div className="flex flex-col gap-5">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="flex flex-col gap-2">
-                <label className="text-muted text-xs uppercase tracking-wide">Vorname</label>
+                <label htmlFor="vorname" className="text-muted text-xs uppercase tracking-wide">Vorname</label>
                 <input
+                  id="vorname"
                   type="text"
                   placeholder="Max"
                   value={vorname}
@@ -256,8 +259,9 @@ export default function Quiz() {
                 />
               </div>
               <div className="flex flex-col gap-2">
-                <label className="text-muted text-xs uppercase tracking-wide">E-Mail</label>
+                <label htmlFor="email" className="text-muted text-xs uppercase tracking-wide">E-Mail</label>
                 <input
+                  id="email"
                   type="email"
                   placeholder="max@beispiel.de"
                   value={email}
@@ -267,9 +271,10 @@ export default function Quiz() {
               </div>
             </div>
             <div className="flex flex-col gap-2">
-              <label className="text-muted text-xs uppercase tracking-wide">Unternehmensgröße</label>
+              <label htmlFor="unternehmensgroesse" className="text-muted text-xs uppercase tracking-wide">Unternehmensgröße</label>
               <div className="relative">
                 <select
+                  id="unternehmensgroesse"
                   value={unternehmensgroesse}
                   onChange={(e) => setUntg(e.target.value)}
                   className={selectClass}
@@ -288,9 +293,10 @@ export default function Quiz() {
               </div>
             </div>
             <div className="flex flex-col gap-2">
-              <label className="text-muted text-xs uppercase tracking-wide">Branche</label>
+              <label htmlFor="branche" className="text-muted text-xs uppercase tracking-wide">Branche</label>
               <div className="relative">
                 <select
+                  id="branche"
                   value={branche}
                   onChange={(e) => setBranche(e.target.value)}
                   className={selectClass}
@@ -312,6 +318,7 @@ export default function Quiz() {
             <button
               onClick={() => {
                 if (!vorname || !email || !unternehmensgroesse || !branche) return
+                if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return
                 setStep(2)
               }}
               className="bg-accent text-page font-extrabold text-sm rounded-[7px] px-8 py-4 transition-opacity hover:opacity-90 w-full md:w-auto"
@@ -510,6 +517,7 @@ export default function Quiz() {
               onClick={() => {
                 setStep(1)
                 setQ1(''); setQ2([]); setQ3(''); setQ4(''); setQ5(''); setQ6('')
+                setVorname(''); setEmail(''); setUntg(''); setBranche('')
               }}
               className="text-muted text-xs hover:text-white transition-colors text-left"
             >
