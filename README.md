@@ -1,36 +1,49 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AI Advisory — Landing Page
 
-## Getting Started
+KI-Beratungs-Landingpage für KMUs & Mittelstand mit eingebettetem Multi-Step Quiz.
 
-First, run the development server:
+## Tech Stack
+- **Framework:** Next.js 14 (App Router)
+- **Styling:** Tailwind CSS
+- **Icons:** lucide-react
+- **Sprache:** Deutsch
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Lokal starten
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Voraussetzungen
+- Node.js 18 oder neuer → https://nodejs.org
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Schritte
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. **Abhängigkeiten installieren:**
+   ```bash
+   npm install
+   ```
 
-## Learn More
+2. **Entwicklungsserver starten:**
+   ```bash
+   npm run dev
+   ```
+   Seite öffnet sich unter: http://localhost:3000
 
-To learn more about Next.js, take a look at the following resources:
+3. **Build prüfen:**
+   ```bash
+   npm run build
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Auf Vercel deployen
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Konto erstellen auf https://vercel.com
+2. Repository auf GitHub pushen
+3. Auf Vercel: „New Project" → GitHub-Repo auswählen → „Deploy"
+4. Fertig — keine weiteren Einstellungen nötig.
 
-## Deploy on Vercel
+## Anpassungen
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+| Was | Wo |
+|---|---|
+| Firmenname | `components/Nav.tsx`, `components/Footer.tsx`, `app/layout.tsx` |
+| Farben | `tailwind.config.ts` → `colors.accent` |
+| Quiz-Fragen | `components/Quiz.tsx` → Konstanten am Dateianfang |
+| Calendly-Links | `components/Quiz.tsx` → `href="#"` in Step 4 ersetzen |
+| Texte | Direkt in den jeweiligen Komponenten |
