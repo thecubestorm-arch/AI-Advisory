@@ -227,7 +227,8 @@ function pickInsights(
     .sort((a, b) => b.priority - a.priority)
     .filter(i => { if (seen.has(i.area)) return false; seen.add(i.area); return true })
     .slice(0, 3)
-    .map(({ priority: _p, ...rest }) => rest)
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    .map(({ priority, ...rest }) => rest)
 }
 
 // ─── Next Steps Generator ─────────────────────────────────
