@@ -1,22 +1,23 @@
 export const metadata = {
-  title: 'Impressum — AI Advisory',
+  title: 'Impressum — alpine.boost',
 }
 
 export default function Impressum() {
   return (
     <div className="px-6 lg:px-20 py-24 lg:py-[120px] max-w-[720px]">
-      <h1 className="text-white text-4xl font-extrabold tracking-tight mb-10">Impressum</h1>
+      <h1 className="text-cream text-4xl font-extrabold tracking-tight mb-10">Impressum</h1>
 
       <section className="mb-8">
-        <h2 className="text-white text-lg font-bold mb-3">Angaben gemäss Art. 3 Abs. 1 lit. s UWG</h2>
+        <h2 className="text-cream text-lg font-bold mb-3">Angaben gemäss Art. 3 Abs. 1 lit. s UWG</h2>
         <p className="text-body text-base leading-relaxed">
-          buetikoferdigital<br />
-          Schweiz
+          alpine.boost / buetikoferdigital<br />
+          Schweiz<br />
+          alpineboost.ch
         </p>
       </section>
 
       <section className="mb-8">
-        <h2 className="text-white text-lg font-bold mb-3">Kontakt</h2>
+        <h2 className="text-cream text-lg font-bold mb-3">Kontakt</h2>
         <p className="text-body text-base leading-relaxed">
           E-Mail:{' '}
           <a
@@ -29,7 +30,7 @@ export default function Impressum() {
       </section>
 
       <section className="mb-8">
-        <h2 className="text-white text-lg font-bold mb-3">Haftungsausschluss</h2>
+        <h2 className="text-cream text-lg font-bold mb-3">Haftungsausschluss</h2>
         <p className="text-body text-base leading-relaxed">
           Die Inhalte dieser Website wurden mit grösster Sorgfalt erstellt. Für die Richtigkeit,
           Vollständigkeit und Aktualität der Inhalte übernehmen wir jedoch keine Gewähr. Als
@@ -39,7 +40,7 @@ export default function Impressum() {
       </section>
 
       <section>
-        <h2 className="text-white text-lg font-bold mb-3">Urheberrecht</h2>
+        <h2 className="text-cream text-lg font-bold mb-3">Urheberrecht</h2>
         <p className="text-body text-base leading-relaxed">
           Die durch den Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen
           dem Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der

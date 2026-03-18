@@ -34,7 +34,7 @@ export default function HowItWorks() {
         <p className="text-muted text-[10px] uppercase tracking-[2px] font-medium mb-3">
           Der Prozess
         </p>
-        <h2 className="text-white text-3xl lg:text-[32px] font-extrabold tracking-tight">
+        <h2 className="text-cream text-3xl lg:text-[32px] font-extrabold tracking-tight">
           So funktioniert es
         </h2>
         <p className="text-body text-sm mt-3 max-w-md">
@@ -58,7 +58,7 @@ export default function HowItWorks() {
               </div>
               <Icon size={28} className="text-accent transition-transform duration-200 group-hover:scale-110" strokeWidth={1.5} />
               <div>
-                <h3 className="text-white text-[17px] font-bold mb-2 leading-snug group-hover:text-accent transition-colors duration-200">
+                <h3 className="text-cream text-[17px] font-bold mb-2 leading-snug group-hover:text-accent transition-colors duration-200">
                   {step.title}
                 </h3>
                 <p className="text-body text-sm leading-relaxed">

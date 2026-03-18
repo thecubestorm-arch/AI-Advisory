@@ -26,9 +26,9 @@ export default function Benefits() {
     <section className="bg-page border-b border-divider px-6 lg:px-20 py-16 lg:py-[72px]">
       <div className="mb-12">
         <p className="text-muted text-[10px] uppercase tracking-[2px] font-medium mb-3">
-          Warum AI Advisory
+          Warum alpine.boost
         </p>
-        <h2 className="text-white text-3xl lg:text-[32px] font-extrabold tracking-tight">
+        <h2 className="text-cream text-3xl lg:text-[32px] font-extrabold tracking-tight">
           Substanz statt Hype
         </h2>
       </div>
@@ -43,7 +43,7 @@ export default function Benefits() {
             >
               <Icon size={32} className="text-accent" strokeWidth={1.5} />
               <div>
-                <h3 className="text-white text-[18px] font-bold mb-2">{b.title}</h3>
+                <h3 className="text-cream text-[18px] font-bold mb-2">{b.title}</h3>
                 <p className="text-body text-sm leading-relaxed">{b.description}</p>
               </div>
             </div>

@@ -404,7 +404,7 @@ export default function Quiz() {
     setSituation(''); setOutcomes([]); setOutcomeOther(''); setObstacle(''); setSolution(''); setAdditional('')
   }
 
-  const inputClass = 'w-full bg-card border border-divider rounded-md px-4 py-3 text-white text-sm placeholder-muted focus:outline-none focus:border-accent transition-colors duration-150'
+  const inputClass = 'w-full bg-card border border-divider rounded-md px-4 py-3 text-cream text-sm placeholder-muted focus:outline-none focus:border-accent transition-colors duration-150'
   const tc = tierConfig[tier]
 
   return (
@@ -414,9 +414,9 @@ export default function Quiz() {
       <header className="sticky top-0 z-10 bg-page border-b border-divider px-6 lg:px-12">
         <div className="flex items-center justify-between h-14">
           <div className="flex items-center gap-4">
-            <Link href="/" className="text-white font-bold text-[15px] tracking-tight hover:text-accent transition-colors duration-150">AI Advisory</Link>
+            <Link href="/" className="text-cream font-bold text-[15px] tracking-tight hover:text-accent transition-colors duration-150">alpine.boost</Link>
             <div className="w-px h-4 bg-divider" />
-            <Link href="/" className="text-muted text-xs hover:text-white transition-colors duration-150 flex items-center gap-1">
+            <Link href="/" className="text-muted text-xs hover:text-cream transition-colors duration-150 flex items-center gap-1">
               ← Startseite
             </Link>
           </div>
@@ -433,7 +433,7 @@ export default function Quiz() {
               <span className="text-muted text-xs ml-2">{uiStep} / 4</span>
             </div>
           ) : (
-            <button onClick={resetAll} className="text-muted text-xs hover:text-white transition-colors">
+            <button onClick={resetAll} className="text-muted text-xs hover:text-cream transition-colors">
               Neu starten
             </button>
           )}
@@ -459,7 +459,7 @@ export default function Quiz() {
             <p className="text-muted text-[10px] uppercase tracking-[2px] font-medium mb-2">
               {uiStep === 1 ? 'Ihre Kontaktdaten' : uiStep === 4 ? 'Ihre Situation' : 'KI-Readiness Assessment'}
             </p>
-            <p className="text-white text-xl lg:text-2xl font-bold tracking-tight mb-8">
+            <p className="text-cream text-xl lg:text-2xl font-bold tracking-tight mb-8">
               {uiStep === 1 ? 'Kurz vorstellen, dann geht\'s los.' :
                uiStep === 2 ? `Fragen ${1}–5 von 10` :
                uiStep === 3 ? `Fragen ${6}–10 von 10` :
@@ -497,7 +497,7 @@ export default function Quiz() {
               <div className="flex flex-col gap-8">
                 {p2Questions.slice(0, 5).map(q => (
                   <div key={q.id}>
-                    <p className="text-white font-semibold text-sm mb-1">{q.text}</p>
+                    <p className="text-cream font-semibold text-sm mb-1">{q.text}</p>
                     {q.subtitle ? <p className="text-muted text-xs mb-3">{q.subtitle}</p> : <div className="mb-4" />}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                       {q.options.map(o => q.type === 'multi' ? (
@@ -512,7 +512,7 @@ export default function Quiz() {
                   </div>
                 ))}
                 <div className="flex gap-3 pt-2">
-                  <button onClick={() => setUiStep(1)} className="text-muted text-sm hover:text-white transition-colors px-4 py-3">← Zurück</button>
+                  <button onClick={() => setUiStep(1)} className="text-muted text-sm hover:text-cream transition-colors px-4 py-3">← Zurück</button>
                   <button onClick={() => { if (step2Valid) setUiStep(3) }}
                     className="flex-1 bg-accent text-page font-extrabold text-sm rounded-[7px] px-8 py-4 transition-opacity hover:opacity-90">
                     Weiter →
@@ -526,7 +526,7 @@ export default function Quiz() {
               <div className="flex flex-col gap-8">
                 {p2Questions.slice(5, 10).map(q => (
                   <div key={q.id}>
-                    <p className="text-white font-semibold text-sm mb-4">{q.text}</p>
+                    <p className="text-cream font-semibold text-sm mb-4">{q.text}</p>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                       {q.options.map(o => (
                         <QuizCard key={o.label} label={o.label}
@@ -536,7 +536,7 @@ export default function Quiz() {
                   </div>
                 ))}
                 <div className="flex gap-3 pt-2">
-                  <button onClick={() => setUiStep(2)} className="text-muted text-sm hover:text-white transition-colors px-4 py-3">← Zurück</button>
+                  <button onClick={() => setUiStep(2)} className="text-muted text-sm hover:text-cream transition-colors px-4 py-3">← Zurück</button>
                   <button onClick={() => { if (step3Valid) setUiStep(4) }}
                     className="flex-1 bg-accent text-page font-extrabold text-sm rounded-[7px] px-8 py-4 transition-opacity hover:opacity-90">
                     Weiter →
@@ -549,13 +549,13 @@ export default function Quiz() {
             {uiStep === 4 && (
               <div className="flex flex-col gap-8">
                 <div>
-                  <p className="text-white font-semibold text-sm mb-4">Was beschreibt Ihre aktuelle Situation am besten?</p>
+                  <p className="text-cream font-semibold text-sm mb-4">Was beschreibt Ihre aktuelle Situation am besten?</p>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                     {situationOptions.map(o => <QuizCard key={o} label={o} selected={situation === o} onClick={() => setSituation(o)} />)}
                   </div>
                 </div>
                 <div>
-                  <p className="text-white font-semibold text-sm mb-1">Was möchten Sie in den nächsten 90 Tagen erreichen?</p>
+                  <p className="text-cream font-semibold text-sm mb-1">Was möchten Sie in den nächsten 90 Tagen erreichen?</p>
                   <p className="text-muted text-xs mb-4">Mehrfachauswahl möglich</p>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                     {outcomeOptions.map(o => o === 'Anderes' ? (
@@ -572,25 +572,25 @@ export default function Quiz() {
                   </div>
                 </div>
                 <div>
-                  <p className="text-white font-semibold text-sm mb-4">Was hält Sie aktuell zurück?</p>
+                  <p className="text-cream font-semibold text-sm mb-4">Was hält Sie aktuell zurück?</p>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                     {obstacleOptions.map(o => <QuizCard key={o} label={o} selected={obstacle === o} onClick={() => setObstacle(o)} />)}
                   </div>
                 </div>
                 <div>
-                  <p className="text-white font-semibold text-sm mb-4">Welche Lösung würde am besten zu Ihnen passen?</p>
+                  <p className="text-cream font-semibold text-sm mb-4">Welche Lösung würde am besten zu Ihnen passen?</p>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                     {solutionOptions.map(o => <QuizCard key={o} label={o} selected={solution === o} onClick={() => setSolution(o)} />)}
                   </div>
                 </div>
                 <div>
-                  <p className="text-white font-semibold text-sm mb-1">Gibt es noch etwas, das wir wissen sollten?</p>
+                  <p className="text-cream font-semibold text-sm mb-1">Gibt es noch etwas, das wir wissen sollten?</p>
                   <p className="text-muted text-xs mb-3">Optional</p>
                   <textarea placeholder="Z.B. Branche, Unternehmensgrösse, spezifische Herausforderungen..." value={additional}
                     onChange={e => setAdditional(e.target.value)} rows={3} className={`${inputClass} resize-none`} />
                 </div>
                 <div className="flex gap-3 pt-2">
-                  <button onClick={() => setUiStep(3)} className="text-muted text-sm hover:text-white transition-colors px-4 py-3">← Zurück</button>
+                  <button onClick={() => setUiStep(3)} className="text-muted text-sm hover:text-cream transition-colors px-4 py-3">← Zurück</button>
                   <button onClick={() => { if (step4Valid) handleSubmit() }}
                     className="flex-1 bg-accent text-page font-extrabold text-sm rounded-[7px] px-8 py-4 transition-opacity hover:opacity-90">
                     Mein Ergebnis anzeigen →
@@ -611,7 +611,7 @@ export default function Quiz() {
             {/* ── BIG REVEAL ── */}
             <div>
               <p className="text-muted text-[10px] uppercase tracking-[2px] font-medium mb-1">Ihr persönliches KI-Profil</p>
-              <p className="text-white text-2xl lg:text-3xl font-black tracking-tight mb-6">
+              <p className="text-cream text-2xl lg:text-3xl font-black tracking-tight mb-6">
                 Sie sind <span className="text-accent">{tc.label}</span>.
               </p>
 
@@ -623,7 +623,7 @@ export default function Quiz() {
                     <div className="relative w-40 h-40">
                       <svg className="w-full h-full -rotate-90" viewBox="0 0 100 100">
                         <circle cx="50" cy="50" r="42" fill="none" stroke="#1c1c1c" strokeWidth="7" />
-                        <circle cx="50" cy="50" r="42" fill="none" stroke="#f59e0b" strokeWidth="7"
+                        <circle cx="50" cy="50" r="42" fill="none" stroke="#C8A96E" strokeWidth="7"
                           strokeLinecap="round"
                           strokeDasharray={`${Math.round((overallScore / 100) * 264)} 264`}
                           style={{ transition: 'stroke-dasharray 1.2s ease-out' }}
@@ -644,13 +644,13 @@ export default function Quiz() {
 
                   {/* Tagline + dimension bars */}
                   <div className="flex-1">
-                    <p className="text-white text-lg font-semibold leading-snug mb-6">{tc.tagline}</p>
+                    <p className="text-cream text-lg font-semibold leading-snug mb-6">{tc.tagline}</p>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4">
                       {dimensions.map(d => (
                         <div key={d.label}>
                           <div className="flex justify-between items-center mb-2">
                             <span className="text-muted text-[10px] uppercase tracking-wide">{d.label}</span>
-                            <span className={`text-xs font-bold ${d.score >= 70 ? 'text-accent' : d.score >= 40 ? 'text-white' : 'text-body'}`}>
+                            <span className={`text-xs font-bold ${d.score >= 70 ? 'text-accent' : d.score >= 40 ? 'text-cream' : 'text-body'}`}>
                               {d.score}%
                             </span>
                           </div>
@@ -680,7 +680,7 @@ export default function Quiz() {
                         {String(i + 1).padStart(2, '0')}
                       </span>
                       <div>
-                        <p className="text-white font-semibold text-sm mb-1.5">{insight.title}</p>
+                        <p className="text-cream font-semibold text-sm mb-1.5">{insight.title}</p>
                         <p className="text-body text-xs leading-relaxed">{insight.body}</p>
                       </div>
                     </div>
@@ -699,7 +699,7 @@ export default function Quiz() {
                         <span className="text-accent text-[10px] font-bold">{i + 1}</span>
                       </div>
                       <div>
-                        <p className="text-white font-semibold text-sm mb-1.5">{ns.title}</p>
+                        <p className="text-cream font-semibold text-sm mb-1.5">{ns.title}</p>
                         <p className="text-body text-xs leading-relaxed">{ns.description}</p>
                       </div>
                     </div>
@@ -712,11 +712,11 @@ export default function Quiz() {
             <div className="bg-card border border-divider rounded-2xl px-6 lg:px-10 py-8 flex flex-col lg:flex-row lg:items-center gap-6 lg:gap-10">
               <div className="flex-1">
                 <p className="text-muted text-[10px] uppercase tracking-[2px] font-medium mb-2">Bereit für den nächsten Schritt?</p>
-                <h3 className="text-white text-xl font-bold mb-2">
+                <h3 className="text-cream text-xl font-bold mb-2">
                   Lassen Sie uns gemeinsam Ihre KI-Transformation starten.
                 </h3>
                 <p className="text-body text-sm leading-relaxed">
-                  Als <span className="text-white font-semibold">{tc.label}</span> haben Sie klares Potenzial.
+                  Als <span className="text-cream font-semibold">{tc.label}</span> haben Sie klares Potenzial.
                   In einem kostenlosen Erstgespräch zeigen wir Ihnen die 3 grössten Quick-Wins für Ihr Unternehmen.
                 </p>
               </div>

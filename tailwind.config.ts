@@ -9,15 +9,16 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        accent:  '#f59e0b',
-        page:    '#0a0a0a',
-        card:    '#141414',
-        proof:   '#0d0d0d',
-        divider: '#1c1c1c',
-        'divider-soft': '#27272a',
-        body:    '#71717a',
-        muted:   '#3f3f46',
-        dim:     '#52525b',
+        accent:  '#C8A96E',
+        page:    '#1A1714',
+        card:    '#211D1A',
+        proof:   '#1A1714',
+        divider: '#2C2521',
+        'divider-soft': '#342F2B',
+        body:    '#9B9188',
+        muted:   '#4A4440',
+        dim:     '#7A6E68',
+        cream:   '#F5F2ED',
       },
       fontFamily: {
         sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],

@@ -7,10 +7,10 @@ html {
 }
 
 body {
-  background-color: #0a0a0a;
-  color: #ffffff;
+  background-color: #1A1714;
+  color: #F5F2ED;
 }
 
 ::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: #0a0a0a; }
-::-webkit-scrollbar-thumb { background: #27272a; border-radius: 3px; }
+::-webkit-scrollbar-track { background: #1A1714; }
+::-webkit-scrollbar-thumb { background: #2C2521; border-radius: 3px; }
