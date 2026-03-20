@@ -411,7 +411,7 @@ export default function Quiz() {
     <div className="min-h-screen bg-page flex flex-col">
 
       {/* ── Top bar ── */}
-      <header className="sticky top-0 z-10 bg-page border-b border-divider px-6 lg:px-12">
+      <header className="sticky top-0 z-10 bg-page border-b border-divider px-6 lg:px-12 print:hidden">
         <div className="flex items-center justify-between h-14">
           <div className="flex items-center gap-4">
             <Link href="/" className="text-cream font-bold text-[15px] tracking-tight hover:text-accent transition-colors duration-150">alpine.boost</Link>
@@ -610,7 +610,25 @@ export default function Quiz() {
 
             {/* ── BIG REVEAL ── */}
             <div>
-              <p className="text-muted text-[10px] uppercase tracking-[2px] font-medium mb-1">Ihr persönliches KI-Profil</p>
+              <div className="flex items-start justify-between gap-4 mb-1">
+                <p className="text-muted text-[10px] uppercase tracking-[2px] font-medium">Ihr persönliches KI-Profil</p>
+                <button
+                  onClick={() => window.print()}
+                  className="print:hidden flex-shrink-0 flex items-center gap-2 border border-divider text-muted text-xs rounded-[6px] px-4 py-2 hover:border-accent hover:text-accent transition-colors duration-150"
+                >
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="flex-shrink-0">
+                    <path d="M7 1v8M4 6l3 3 3-3M2 10v2a1 1 0 001 1h8a1 1 0 001-1v-2" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Bericht herunterladen
+                </button>
+              </div>
+
+              {/* Print-only header */}
+              <div className="hidden print:block mb-6 pb-4 border-b border-gray-300">
+                <p className="text-sm font-bold">alpine.boost — KI-Readiness Report</p>
+                <p className="text-xs text-gray-500 mt-1">{name} · {new Date().toLocaleDateString('de-CH')}</p>
+              </div>
+
               <p className="text-cream text-2xl lg:text-3xl font-black tracking-tight mb-6">
                 Sie sind <span className="text-accent">{tc.label}</span>.
               </p>
@@ -709,7 +727,7 @@ export default function Quiz() {
             </div>
 
             {/* ── CONTACT CTA ── */}
-            <div className="bg-card border border-divider rounded-2xl px-6 lg:px-10 py-8 flex flex-col lg:flex-row lg:items-center gap-6 lg:gap-10">
+            <div className="print:hidden bg-card border border-divider rounded-2xl px-6 lg:px-10 py-8 flex flex-col lg:flex-row lg:items-center gap-6 lg:gap-10">
               <div className="flex-1">
                 <p className="text-muted text-[10px] uppercase tracking-[2px] font-medium mb-2">Bereit für den nächsten Schritt?</p>
                 <h3 className="text-cream text-xl font-bold mb-2">
