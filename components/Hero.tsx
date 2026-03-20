@@ -49,11 +49,22 @@ export default function Hero() {
         {/* Big CTA */}
         <a
           href="/quiz"
-          className="inline-block bg-accent text-page font-extrabold text-base rounded-[9px] px-12 py-5 transition-all duration-200 hover:opacity-90 hover:scale-[1.02] hover:shadow-xl hover:shadow-yellow-700/25 mb-12"
-          style={{ fontSize: '1.05rem' }}
+          className="inline-block relative font-extrabold text-base rounded-[9px] px-12 py-5 mb-12 text-accent border-2 border-accent transition-all duration-300 hover:scale-[1.03] hover:text-page hover:bg-accent"
+          style={{
+            fontSize: '1.05rem',
+            boxShadow: '0 0 18px 3px rgba(245, 158, 11, 0.45), 0 0 40px 8px rgba(245, 158, 11, 0.18)',
+            animation: 'glow-pulse 2.4s ease-in-out infinite',
+          }}
         >
           Jetzt AI-Readiness testen →
         </a>
+
+        <style>{`
+          @keyframes glow-pulse {
+            0%, 100% { box-shadow: 0 0 18px 3px rgba(245,158,11,0.45), 0 0 40px 8px rgba(245,158,11,0.18); }
+            50%       { box-shadow: 0 0 28px 6px rgba(245,158,11,0.70), 0 0 60px 14px rgba(245,158,11,0.30); }
+          }
+        `}</style>
 
         {/* Stats row */}
         <div className="flex items-center justify-center flex-wrap gap-y-4">
